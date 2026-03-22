@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Social Media Marketing"
+  description="Agence Social Media à Montpellier — Stratégie éditoriale, création de contenus, ads Meta & TikTok. Communauté engagée, notoriété boostée. Spark Digital Agency."
+  page="social-media"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <a href="/services">Services</a><span class="breadcrumb-sep">/</span>
+        <span>Social Media</span>
+      </div>
+      <span class="section-label">Réseaux sociaux</span>
+      <h1>Social Media qui <span class="gradient-text">engagent</span></h1>
+      <p>Stratégie, création de contenu, community management et publicités sociales. Nous transformons vos réseaux en véritables machines à leads.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/devis" class="btn-primary">Stratégie social media gratuite</a>
+        <a href="/realisations" class="btn-secondary">Voir nos cas clients</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="stats-grid animate-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="50" data-suffix="K">0K</span>
+          <p class="stat-label">abonnés moyens gagnés en 6 mois</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="8" data-suffix=".5%" data-decimal="false">0%</span>
+          <p class="stat-label">taux d'engagement moyen</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="5" data-suffix="x">0x</span>
+          <p class="stat-label">ROAS Meta Ads</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="120" data-suffix="+">0+</span>
+          <p class="stat-label">créations de contenus / mois</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plateformes -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label section-label-dark">Plateformes</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.5rem);font-weight:800;">Experts sur chaque réseau</h2>
+      </div>
+      <div class="g-4">
+        {[
+          { icon:'📸', p:'Instagram', desc:'Reels viraux, Stories engageantes, posts curatés. On maîtrise l\'algorithme.' },
+          { icon:'👔', p:'LinkedIn',  desc:'Personal branding, contenu B2B, LinkedIn Ads. Décideurs touchés.' },
+          { icon:'🎵', p:'TikTok',    desc:'Tendances exploitées, formats natifs, croissance organique explosive.' },
+          { icon:'📘', p:'Facebook',  desc:'Meta Ads, groupes, évènements. Portée maximale et ciblage précis.' },
+        ].map((item, i) => (
+          <div class={`light-card animate-up delay-${i+1}`} style="padding:2rem;text-align:center;">
+            <div style="font-size:3rem;margin-bottom:.75rem;">{item.icon}</div>
+            <h3 style="font-weight:700;color:var(--text-dark);margin-bottom:.5rem;">{item.p}</h3>
+            <p class="text-muted" style="font-size:.875rem;line-height:1.6;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services inclus -->
+  <section class="section section-dark diagonal-both">
+    <div class="container">
+      <div class="split">
+        <div class="animate-up">
+          <span class="section-label">Ce qu'on fait pour vous</span>
+          <h2 style="font-size:2rem;font-weight:800;margin-bottom:1.5rem;">
+            Community management & création premium
+          </h2>
+          <ul class="check-list">
+            <li>Stratégie éditoriale mensuelle</li>
+            <li>Calendrier de contenu + validation client</li>
+            <li>Création visuels & Reels (motion design)</li>
+            <li>Rédaction de légendes optimisées</li>
+            <li>Publication & planification</li>
+            <li>Gestion des commentaires et messages</li>
+            <li>Veille concurrentielle et tendances</li>
+            <li>Rapport analytics mensuel détaillé</li>
+          </ul>
+        </div>
+        <div class="animate-up delay-2">
+          <div class="glass-card" style="padding:2rem;margin-bottom:1.5rem;">
+            <h3 style="font-weight:700;margin-bottom:1rem;">📢 Meta Ads (Facebook & Instagram)</h3>
+            <p class="text-muted" style="font-size:.9rem;line-height:1.65;">
+              Campagnes notoriété, trafic, conversions et catalogue. Audiences Lookalike, Custom Audiences, retargeting. Creative testing continu.
+            </p>
+          </div>
+          <div class="glass-card" style="padding:2rem;">
+            <h3 style="font-weight:700;margin-bottom:1rem;">🎵 TikTok Ads</h3>
+            <p class="text-muted" style="font-size:.9rem;line-height:1.65;">
+              Spark Ads, TopView, In-Feed. Créatifs natifs qui s'intègrent parfaitement dans le feed. Ciblage ultra-précis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;margin-bottom:1rem;">
+        Explosez vos réseaux sociaux
+      </h2>
+      <p class="text-muted" style="max-width:480px;margin:0 auto 2rem;">
+        Audit de vos réseaux + stratégie personnalisée · Gratuit et sans engagement
+      </p>
+      <a href="/devis" class="btn-primary" style="font-size:1rem;padding:1rem 2.25rem;">Démarrer maintenant →</a>
+    </div>
+  </section>
+
+</BaseLayout>

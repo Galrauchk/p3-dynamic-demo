@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const articles = [
+  { emoji:'🔍', cat:'SEO',          title:'Comment dominer Google en 2025 : la stratégie complète', date:'18 mars 2025', readTime:'12 min', excerpt:'Core Web Vitals, contenu EEAT, Search Generative Experience... Décryptage complet de l\'algorithme Google et des tactiques qui fonctionnent vraiment.', featured: true },
+  { emoji:'📢', cat:'Google Ads',   title:'ROAS à 8x : notre méthode pour les campagnes Google Ads', date:'10 mars 2025', readTime:'8 min',  excerpt:'Comment structure-t-on nos campagnes pour atteindre des ROAS entre 6 et 10x ? Voici notre process détaillé.' },
+  { emoji:'📱', cat:'Social Media', title:'L\'algorithme Instagram 2025 : ce qui marche vraiment', date:'3 mars 2025',  readTime:'6 min',  excerpt:'Reels, engagement pods, hashtags, heure de publication... On démystifie les vraies règles de l\'algorithme Instagram en 2025.' },
+  { emoji:'🤖', cat:'Automation',   title:'5 séquences email qui convertissent à plus de 8%', date:'25 fév. 2025',  readTime:'10 min', excerpt:'Welcome series, abandoned cart, win-back... Ces 5 séquences email ont généré des millions d\'euros pour nos clients.' },
+  { emoji:'💻', cat:'Création Web', title:'Astro 5 vs Next.js : quel framework pour votre site en 2025 ?', date:'18 fév. 2025', readTime:'9 min', excerpt:'Comparaison honnête entre Astro, Next.js et Nuxt.js pour créer des sites ultra-performants orientés SEO.' },
+  { emoji:'📊', cat:'Data',         title:'GA4 : les 10 rapports essentiels pour piloter votre marketing', date:'12 fév. 2025', readTime:'7 min', excerpt:'Après la migration GA4, beaucoup se perdent dans les rapports. Voici les 10 tableaux de bord qui comptent vraiment.' },
+];
+---
+
+<BaseLayout
+  title="Blog — Marketing Digital & SEO"
+  description="Blog Spark Digital Agency — Guides, stratégies et actualités en SEO, Google Ads, Social Media et Marketing Digital. Par des experts, pour des experts."
+  page="blog"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <span>Blog</span>
+      </div>
+      <span class="section-label">Ressources & Expertise</span>
+      <h1>Blog <span class="gradient-text">Digital</span></h1>
+      <p>Guides pratiques, stratégies avancées, actualités du marketing digital. Rédigé par nos experts pour vous aider à performer.</p>
+    </div>
+  </section>
+
+  <!-- Article featured -->
+  <section class="section section-dark">
+    <div class="container">
+      <span class="section-label" style="margin-bottom:2rem;display:inline-block;">Article à la une</span>
+      <a href="/article" class="glass-card animate-up" style="display:grid;grid-template-columns:1fr 1.5fr;gap:0;text-decoration:none;color:inherit;overflow:hidden;" >
+        <div class="blog-thumb" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);aspect-ratio:auto;min-height:280px;">
+          <span style="font-size:5rem;position:relative;z-index:1;">🔍</span>
+        </div>
+        <div style="padding:2.5rem;">
+          <div class="blog-meta" style="margin-bottom:1rem;">
+            <span class="tag">SEO</span>
+            <span style="font-size:.78rem;color:var(--text-dim);">18 mars 2025 · 12 min de lecture</span>
+          </div>
+          <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:1rem;line-height:1.25;">
+            Comment dominer Google en 2025 : la stratégie complète
+          </h2>
+          <p class="text-muted" style="font-size:.9rem;line-height:1.7;margin-bottom:1.5rem;">
+            Core Web Vitals, contenu EEAT, Search Generative Experience... Décryptage complet de l'algorithme Google et des tactiques qui fonctionnent vraiment.
+          </p>
+          <span style="font-size:.9rem;font-weight:600;color:var(--cyan);">Lire l'article →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Filtres catégories -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;">
+        <h2 style="font-size:1.5rem;font-weight:800;color:var(--text-dark);">Tous les articles</h2>
+        <div style="display:flex;gap:.625rem;flex-wrap:wrap;">
+          {['Tous', 'SEO', 'Google Ads', 'Social Media', 'Automation', 'Création Web', 'Data'].map((cat, i) => (
+            <span class="tag" style={`cursor:pointer;${i===0?'background:var(--gradient);background-size:200%;color:white;border:none;':'background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);color:var(--blue);'}`}>
+              {cat}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="g-3">
+        {articles.map((a, i) => (
+          <a href="/article" class={`light-card animate-up delay-${i%3+1}`} style="display:block;text-decoration:none;color:inherit;">
+            <div class="blog-thumb" style="background:var(--navy-light);">
+              <span style="position:relative;z-index:1;">{a.emoji}</span>
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <span class="tag" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);color:var(--blue);">{a.cat}</span>
+                <span style="font-size:.75rem;color:var(--text-dim);">{a.date}</span>
+                <span style="font-size:.75rem;color:var(--text-dim);">{a.readTime}</span>
+              </div>
+              <h3 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:.625rem;line-height:1.35;">{a.title}</h3>
+              <p class="text-muted" style="font-size:.875rem;line-height:1.65;">{a.excerpt}</p>
+              <span style="display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:600;color:var(--blue);">Lire →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="cta-section">
+    <div class="container text-center" style="max-width:580px;">
+      <span class="section-label">Newsletter</span>
+      <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:1rem;">
+        Les meilleures stratégies directement dans votre boîte
+      </h2>
+      <p class="text-muted" style="margin-bottom:2rem;">
+        Chaque jeudi, une stratégie digitale actionnnable. +2 800 abonnés. Gratuit, désinscription en 1 clic.
+      </p>
+      <div style="display:flex;gap:.75rem;max-width:420px;margin:0 auto;">
+        <input type="email" class="form-input" placeholder="votre@email.fr" style="flex:1;" />
+        <button class="btn-primary" style="white-space:nowrap;padding:.875rem 1.5rem;">S'inscrire</button>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

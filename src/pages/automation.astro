@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Marketing Automation"
+  description="Marketing automation à Montpellier — Email sequences, CRM, lead nurturing, workflows automatisés. Convertissez en pilote automatique. Spark Digital Agency."
+  page="automation"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <a href="/services">Services</a><span class="breadcrumb-sep">/</span>
+        <span>Automation</span>
+      </div>
+      <span class="section-label">Marketing Automation</span>
+      <h1>Convertissez en <span class="gradient-text">pilote automatique</span></h1>
+      <p>Email sequences, CRM, lead scoring, chatbots, workflows. Vos prospects sont nurturés 24h/24, qualifiés et livrés chauds à votre équipe commerciale.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/devis"   class="btn-primary">Démarrer l'automation</a>
+        <a href="/contact" class="btn-secondary">Parler à un expert</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="stats-grid animate-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="65" data-suffix="%">0%</span>
+          <p class="stat-label">leads qualifiés en plus</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="40" data-suffix="%">0%</span>
+          <p class="stat-label">de temps commercial économisé</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="3" data-suffix="x">0x</span>
+          <p class="stat-label">taux de conversion email</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="24" data-suffix="h/24">0h</span>
+          <p class="stat-label">nurturing automatisé</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label section-label-dark">Nos solutions</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.5rem);font-weight:800;">L'automation qui transforme votre funnel</h2>
+      </div>
+      <div class="g-3">
+        {[
+          { icon:'📧', title:'Email Automation', desc:'Séquences de bienvenue, onboarding, re-engagement, panier abandonné. Chaque email au bon moment.' },
+          { icon:'🎯', title:'Lead Scoring',     desc:'Qualification automatique de vos prospects selon leur comportement. Votre commercial appelle au bon moment.' },
+          { icon:'💬', title:'Chatbot & IA',     desc:'Bot qualifiant disponible 24h/24. Capture les leads, répond aux questions, prend des rendez-vous.' },
+          { icon:'🔄', title:'CRM Automation',   desc:'HubSpot, Salesforce, Pipedrive, Monday. On connecte et automatise vos outils métier.' },
+          { icon:'📱', title:'SMS Marketing',    desc:'Campagnes SMS à fort taux d\'ouverture (98%). Rappels, promotions, confirmations.' },
+          { icon:'📊', title:'Attribution & ROI', desc:'Tracking complet du parcours client. Vous savez exactement quel canal génère du chiffre.' },
+        ].map((item, i) => (
+          <div class={`light-card animate-up delay-${i%3+1}`} style="padding:2rem;">
+            <div class="icon-box" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);">{item.icon}</div>
+            <h3 style="font-weight:700;color:var(--text-dark);margin-bottom:.5rem;">{item.title}</h3>
+            <p class="text-muted" style="font-size:.875rem;line-height:1.65;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Outils -->
+  <section class="section section-dark diagonal-both">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label">Outils maîtrisés</span>
+        <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;">Les meilleures plateformes d'automation</h2>
+      </div>
+      <div class="tech-pills" style="justify-content:center;max-width:800px;margin:0 auto;">
+        {['HubSpot', 'ActiveCampaign', 'Klaviyo', 'Mailchimp', 'Salesforce',
+          'Make (Integromat)', 'Zapier', 'Brevo', 'Pipedrive', 'Monday CRM',
+          'Intercom', 'ManyChat', 'n8n', 'Airtable', 'Notion'].map(t => (
+          <span class="tech-pill">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;margin-bottom:1rem;">
+        Automatisez votre croissance
+      </h2>
+      <p class="text-muted" style="max-width:480px;margin:0 auto 2rem;">
+        Audit de votre funnel · Plan d'automation sur-mesure · ROI projeté
+      </p>
+      <a href="/devis" class="btn-primary" style="font-size:1rem;padding:1rem 2.25rem;">Audit automation gratuit →</a>
+    </div>
+  </section>
+
+</BaseLayout>

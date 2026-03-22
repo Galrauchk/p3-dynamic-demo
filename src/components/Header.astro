@@ -1,0 +1,68 @@
+---
+interface Props {
+  page?: string;
+}
+const { page = "" } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="/" class="site-logo" aria-label="Spark Digital Agency - Accueil">
+        <span class="logo-spark">Spark</span>
+        <span class="logo-digital">&nbsp;Digital</span>
+      </a>
+
+      <!-- Nav desktop -->
+      <nav aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="/"              class:list={["nav-link", { active: page === 'home' }]}>Accueil</a></li>
+          <li>
+            <a href="/services"        class:list={["nav-link", { active: page === 'services' }]}>
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="/seo"             class:list={["nav-link", { active: page === 'seo' }]}>
+              SEO <span class="nav-new">NEW</span>
+            </a>
+          </li>
+          <li><a href="/google-ads"    class:list={["nav-link", { active: page === 'google-ads' }]}>Google Ads</a></li>
+          <li><a href="/realisations"  class:list={["nav-link", { active: page === 'realisations' }]}>Réalisations</a></li>
+          <li><a href="/blog"          class:list={["nav-link", { active: page === 'blog' }]}>Blog</a></li>
+          <li><a href="/about"         class:list={["nav-link", { active: page === 'about' }]}>À propos</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA -->
+      <a href="tel:0467223344" class="header-cta">
+        📞 04 67 22 33 44
+      </a>
+
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav overlay -->
+<nav class="nav-mobile" aria-label="Navigation mobile">
+  <a href="/">🏠 Accueil</a>
+  <a href="/services">⚡ Services</a>
+  <a href="/seo">🔍 SEO</a>
+  <a href="/google-ads">📢 Google Ads</a>
+  <a href="/social-media">📱 Social Media</a>
+  <a href="/creation-web">💻 Création Web</a>
+  <a href="/automation">🤖 Automation</a>
+  <a href="/realisations">🏆 Réalisations</a>
+  <a href="/blog">📝 Blog</a>
+  <a href="/about">👥 À propos</a>
+  <a href="/contact" class="nav-mobile-cta">✉️ Nous contacter</a>
+</nav>

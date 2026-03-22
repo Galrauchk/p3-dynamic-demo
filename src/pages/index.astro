@@ -1,17 +1,333 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Accueil"
+  description="Spark Digital Agency — Agence marketing digital à Montpellier. SEO, Google Ads, Social Media, Création web & Automation. On crée, on mesure, on performe."
+  page="home"
+>
+
+  <!-- ═══════════════════════════════════════════
+       HERO — DARK + PARTICULES + TYPEWRITER
+       ═══════════════════════════════════════════ -->
+  <section class="hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="orb orb-cyan" aria-hidden="true"></div>
+    <div class="orb orb-blue" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-content" style="max-width:680px;">
+
+        <!-- Badge pulse -->
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Disponible pour nouveaux projets · 2026
+        </div>
+
+        <!-- H1 -->
+        <h1 class="hero-title">
+          On fait grossir<br/>
+          <span class="gradient-text">les marques</span>
+        </h1>
+
+        <!-- Typewriter -->
+        <div class="typewriter-wrap" aria-live="polite">
+          <span
+            class="typewriter-text"
+            data-words='["SEO Expert", "Google Ads", "Social Media", "Création Web", "Marketing Automation"]'
+          >SEO Expert</span>
+        </div>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle">
+          Agence digitale basée à Montpellier. Nous transformons votre visibilité en ligne en résultats concrets et mesurables — trafic, leads, chiffre d'affaires.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-actions">
+          <a href="/devis"        class="btn-primary">Lancer votre projet →</a>
+          <a href="/realisations" class="btn-secondary">Voir nos réalisations</a>
+        </div>
+
+        <!-- Client logos -->
+        <div class="hero-clients">
+          <p class="hero-clients-label">Ils nous font confiance</p>
+          <div class="hero-logos">
+            <span class="hero-logo-item">NOVALO</span>
+            <span class="hero-logo-item">MERIDIA</span>
+            <span class="hero-logo-item">AXENTO</span>
+            <span class="hero-logo-item">STRATUM</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES — BLANC + DIAGONAL UP
+       ═══════════════════════════════════════════ -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+
+      <div class="text-center mb-xl">
+        <span class="section-label section-label-dark">Nos services</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;letter-spacing:-.02em;">
+          Tout ce dont votre croissance a besoin
+        </h2>
+        <p class="text-muted" style="max-width:540px;margin:1rem auto 0;">
+          Des stratégies sur-mesure, pilotées par la data. Chaque euro investi est tracé, optimisé, performant.
+        </p>
+      </div>
+
+      <div class="g-3">
+        <!-- SEO -->
+        <a href="/seo" class="light-card animate-up delay-1" style="display:block;padding:2rem;text-decoration:none;color:inherit;">
+          <div class="icon-box" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);">🔍</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem;">SEO & Référencement</h3>
+          <p class="text-muted" style="font-size:.9rem;line-height:1.65;">
+            Positionnez-vous sur Google durablement. Audits techniques, contenu optimisé, netlinking puissant.
+          </p>
+          <span style="display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:600;color:var(--blue);">En savoir plus →</span>
+        </a>
+
+        <!-- Google Ads -->
+        <a href="/google-ads" class="light-card animate-up delay-2" style="display:block;padding:2rem;text-decoration:none;color:inherit;">
+          <div class="icon-box" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);">📢</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem;">Google Ads</h3>
+          <p class="text-muted" style="font-size:.9rem;line-height:1.65;">
+            Campagnes Search, Display et Shopping ultra-optimisées. ROI maximal, dépenses maîtrisées.
+          </p>
+          <span style="display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:600;color:var(--blue);">En savoir plus →</span>
+        </a>
+
+        <!-- Social Media -->
+        <a href="/social-media" class="light-card animate-up delay-3" style="display:block;padding:2rem;text-decoration:none;color:inherit;">
+          <div class="icon-box" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);">📱</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem;">Social Media</h3>
+          <p class="text-muted" style="font-size:.9rem;line-height:1.65;">
+            Stratégie éditoriale, création de contenus, ads Meta & TikTok. Communauté engagée, notoriété boostée.
+          </p>
+          <span style="display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:600;color:var(--blue);">En savoir plus →</span>
+        </a>
+
+        <!-- Création web -->
+        <a href="/creation-web" class="light-card animate-up delay-4" style="display:block;padding:2rem;text-decoration:none;color:inherit;">
+          <div class="icon-box" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);">💻</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem;">Création Web</h3>
+          <p class="text-muted" style="font-size:.9rem;line-height:1.65;">
+            Sites vitrine, e-commerce et landing pages optimisés pour la conversion. Design moderne, rapide, mobile-first.
+          </p>
+          <span style="display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:600;color:var(--blue);">En savoir plus →</span>
+        </a>
+
+        <!-- Automation -->
+        <a href="/automation" class="light-card animate-up delay-5" style="display:block;padding:2rem;text-decoration:none;color:inherit;">
+          <div class="icon-box" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);">🤖</div>
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:.5rem;">Marketing Automation</h3>
+          <p class="text-muted" style="font-size:.9rem;line-height:1.65;">
+            Email marketing, CRM, workflows automatisés. Nurturez vos leads et convertissez en pilote automatique.
+          </p>
+          <span style="display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:600;color:var(--blue);">En savoir plus →</span>
+        </a>
+
+        <!-- Audit -->
+        <div class="light-card animate-up delay-6" style="padding:2rem;background:linear-gradient(135deg,#00e5ff,#0066ff);border:none;">
+          <h3 style="font-size:1.1rem;font-weight:700;color:white;margin-bottom:.5rem;">Audit digital offert</h3>
+          <p style="font-size:.9rem;line-height:1.65;color:rgba(255,255,255,.85);">
+            Analysez votre situation actuelle et découvrez vos opportunités de croissance. Gratuit, sans engagement.
+          </p>
+          <a href="/devis" style="display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:700;color:white;">Démarrer →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       RÉSULTATS — DARK + COMPTEURS
+       ═══════════════════════════════════════════ -->
+  <section class="section section-dark diagonal-both">
+    <div class="container">
+
+      <div class="text-center mb-xl">
+        <span class="section-label">Nos résultats</span>
+        <h2 class="animate-up" style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;letter-spacing:-.02em;">
+          Des chiffres qui parlent d'eux-mêmes
+        </h2>
+        <p class="text-muted animate-up delay-1" style="max-width:520px;margin:1rem auto 0;">
+          La performance n'est pas un accident. Elle est le résultat d'une méthode éprouvée et de données en temps réel.
+        </p>
+      </div>
+
+      <!-- SVG décoratif -->
+      <div style="position:relative;margin-bottom:3rem;opacity:0.15;pointer-events:none;" aria-hidden="true">
+        <svg width="100%" height="60" viewBox="0 0 1200 60" fill="none" preserveAspectRatio="none">
+          <path d="M0 50 Q150 10 300 35 T600 20 T900 40 T1200 15" stroke="url(#grad)" stroke-width="2" fill="none"/>
+          <defs>
+            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%"   stop-color="#00e5ff"/>
+              <stop offset="100%" stop-color="#0066ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card animate-up">
+          <span class="stat-number" data-target="340" data-suffix="%" data-prefix="+">0%</span>
+          <p class="stat-label">ROI moyen constaté</p>
+        </div>
+        <div class="stat-card animate-up delay-1">
+          <span class="stat-number" data-target="4.9" data-suffix="★" data-decimal="true">0★</span>
+          <p class="stat-label">Note client moyenne</p>
+        </div>
+        <div class="stat-card animate-up delay-2">
+          <span class="stat-number" data-target="150" data-suffix="+">0+</span>
+          <p class="stat-label">Clients accompagnés</p>
+        </div>
+        <div class="stat-card animate-up delay-3">
+          <span class="stat-number" data-target="8" data-suffix=" ans">0 ans</span>
+          <p class="stat-label">D'expertise digitale</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PROCESS — BLANC
+       ═══════════════════════════════════════════ -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+
+      <div class="text-center mb-xl">
+        <span class="section-label section-label-dark">Notre méthode</span>
+        <h2 class="animate-up" style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;letter-spacing:-.02em;">
+          4 étapes vers la performance
+        </h2>
+        <p class="text-muted animate-up delay-1" style="max-width:520px;margin:1rem auto 0;">
+          Un processus clair, structuré et transparent. Vous savez toujours où en est votre projet.
+        </p>
+      </div>
+
+      <div class="process-horizontal">
+        <div class="process-step-h animate-up delay-1">
+          <div class="process-step-num">1</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem;">Audit & Diagnostic</h3>
+          <p style="font-size:.875rem;color:var(--text-gray);line-height:1.65;">
+            Analyse complète de votre situation digitale, vos concurrents et vos opportunités de croissance.
+          </p>
+        </div>
+        <div class="process-step-h animate-up delay-2">
+          <div class="process-step-num">2</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem;">Stratégie sur-mesure</h3>
+          <p style="font-size:.875rem;color:var(--text-gray);line-height:1.65;">
+            Plan d'action personnalisé avec objectifs chiffrés, KPIs et roadmap mensuelle.
+          </p>
+        </div>
+        <div class="process-step-h animate-up delay-3">
+          <div class="process-step-num">3</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem;">Exécution & Optimisation</h3>
+          <p style="font-size:.875rem;color:var(--text-gray);line-height:1.65;">
+            Mise en œuvre agile, tests A/B continus, optimisation hebdomadaire des performances.
+          </p>
+        </div>
+        <div class="process-step-h animate-up delay-4">
+          <div class="process-step-num">4</div>
+          <h3 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem;">Reporting & Croissance</h3>
+          <p style="font-size:.875rem;color:var(--text-gray);line-height:1.65;">
+            Tableaux de bord en temps réel, rapports mensuels détaillés. Votre ROI est mesuré à l'euro près.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       TÉMOIGNAGES — DARK
+       ═══════════════════════════════════════════ -->
+  <section class="section section-dark diagonal-both">
+    <div class="container">
+
+      <div class="text-center mb-xl">
+        <span class="section-label">Témoignages</span>
+        <h2 class="animate-up" style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;letter-spacing:-.02em;">
+          Ce qu'ils disent de nous
+        </h2>
+      </div>
+
+      <div class="testimonials-wrap">
+        <div class="glass-card testimonial-card animate-up delay-1">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "Spark Digital a transformé notre présence en ligne. En 6 mois, notre trafic organique a triplé et notre coût par lead Google Ads a diminué de 40%. Une équipe vraiment top !"
+          </p>
+          <div class="author-row">
+            <div class="author-avatar">MB</div>
+            <div>
+              <p class="author-name">Marc Beaumont</p>
+              <p class="author-role">CEO — Novalo SAS, Montpellier</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card animate-up delay-2">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "Grâce à leur stratégie Social Media, nous avons atteint 50K abonnés Instagram en 4 mois. Les contenus sont premium et l'engagement est bien au-dessus des moyennes du secteur."
+          </p>
+          <div class="author-row">
+            <div class="author-avatar">SL</div>
+            <div>
+              <p class="author-name">Sophie Lambert</p>
+              <p class="author-role">Directrice Marketing — Meridia, Toulouse</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card testimonial-card animate-up delay-3">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">
+            "Notre nouveau site généré +280% de demandes de devis. L'équipe a compris nos enjeux dès le départ. Réactivité, expertise et résultats. Je recommande à 100%."
+          </p>
+          <div class="author-row">
+            <div class="author-avatar">TM</div>
+            <div>
+              <p class="author-name">Thomas Mora</p>
+              <p class="author-role">Fondateur — Axento Group, Bordeaux</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL — GRADIENT ANIMÉ
+       ═══════════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <span class="section-label">Prêt à performer ?</span>
+      <h2 class="animate-up" style="font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1.25rem;max-width:700px;margin-left:auto;margin-right:auto;">
+        Lançons votre stratégie digitale maintenant
+      </h2>
+      <p class="text-muted animate-up delay-1" style="max-width:500px;margin:0 auto 2.5rem;">
+        Audit digital gratuit · Réponse sous 24h · Sans engagement
+      </p>
+      <div class="animate-up delay-2" style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <a href="/devis"   class="btn-primary" style="font-size:1rem;padding:1rem 2.25rem;">Obtenir mon audit gratuit</a>
+        <a href="/contact" class="btn-secondary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

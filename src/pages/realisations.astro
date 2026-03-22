@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projets = [
+  {
+    emoji: '🚀',
+    client: 'Novalo SaaS',
+    secteur: 'SaaS B2B',
+    service: 'SEO + Google Ads',
+    result: '+420% trafic',
+    desc: 'Stratégie SEO complète et campagnes Google Ads pour une startup SaaS B2B. De 0 à 15 000 visiteurs/mois en 8 mois.',
+    tags: ['SEO', 'Google Ads'],
+    href: '/realisation',
+  },
+  {
+    emoji: '👗',
+    client: 'Élégance Paris',
+    secteur: 'E-commerce Mode',
+    service: 'Social Media + Meta Ads',
+    result: '5.2x ROAS',
+    desc: 'Stratégie social media premium et campagnes Meta Ads. Explosion de la notoriété et ROI publicitaire de 5.2x.',
+    tags: ['Social Media', 'Meta Ads'],
+    href: '/realisation',
+  },
+  {
+    emoji: '🏗️',
+    client: 'Batipro Sud',
+    secteur: 'BTP / Construction',
+    service: 'Création web + SEO',
+    result: '+280% leads',
+    desc: 'Refonte complète du site web, optimisation SEO locale et Google My Business. Explosion des appels et demandes de devis.',
+    tags: ['Création Web', 'SEO Local'],
+    href: '/realisation',
+  },
+  {
+    emoji: '🏥',
+    client: 'Clinique du Soleil',
+    secteur: 'Santé / Médical',
+    service: 'Google Ads + Automation',
+    result: '-35% CPL',
+    desc: 'Campagnes Google Ads pour clinique privée et automation email pour le nurturing de patients potentiels.',
+    tags: ['Google Ads', 'Automation'],
+    href: '/realisation',
+  },
+  {
+    emoji: '🍽️',
+    client: 'RestauGroup',
+    secteur: 'Restauration',
+    service: 'Social Media + Création web',
+    result: '+180% réservations',
+    desc: 'Identité digitale complète pour un groupe de 6 restaurants. Site web + gestion des réseaux + publicités locales.',
+    tags: ['Social Media', 'Création Web'],
+    href: '/realisation',
+  },
+  {
+    emoji: '🎓',
+    client: 'FormaPro Academy',
+    secteur: 'Formation professionnelle',
+    service: 'SEO + Automation',
+    result: '+320% inscriptions',
+    desc: 'SEO sur les mots-clés formation + automation email pour convertir les prospects en inscrits. Résultats en 4 mois.',
+    tags: ['SEO', 'Automation', 'Google Ads'],
+    href: '/realisation',
+  },
+];
+---
+
+<BaseLayout
+  title="Nos Réalisations"
+  description="Cas clients et réalisations Spark Digital Agency — SEO, Google Ads, Social Media, Création web. Découvrez nos résultats concrets."
+  page="realisations"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <span>Réalisations</span>
+      </div>
+      <span class="section-label">Portfolio</span>
+      <h1>Nos <span class="gradient-text">réalisations</span></h1>
+      <p>150+ clients accompagnés depuis 8 ans. Voici quelques exemples des résultats que nous obtenons grâce à nos stratégies digitales sur-mesure.</p>
+    </div>
+  </section>
+
+  <!-- Stats rapides -->
+  <section class="section section-dark" style="padding:2.5rem 0;">
+    <div class="container">
+      <div class="stats-grid animate-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="150" data-suffix="+">0+</span>
+          <p class="stat-label">clients accompagnés</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="8" data-suffix=" ans">0 ans</span>
+          <p class="stat-label">d'expertise</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="12" data-suffix="M€">0M€</span>
+          <p class="stat-label">budgets publicitaires gérés</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="98" data-suffix="%">0%</span>
+          <p class="stat-label">clients satisfaits</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtres + Grid -->
+  <section class="section section-dark">
+    <div class="container">
+
+      <!-- Filtres -->
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:3rem;justify-content:center;" id="filters">
+        {['Tous', 'SEO', 'Google Ads', 'Social Media', 'Création Web', 'Automation'].map((f, i) => (
+          <button
+            class={`filter-btn ${i === 0 ? 'active' : ''}`}
+            data-filter={f === 'Tous' ? 'all' : f}
+            style={`padding:.5rem 1.25rem;border-radius:100px;font-size:.85rem;font-weight:600;border:1px solid ${i===0?'var(--cyan)':'rgba(255,255,255,.15)'};background:${i===0?'var(--cyan-dim)':'transparent'};color:${i===0?'var(--cyan)':'var(--text-muted)'};cursor:pointer;transition:all .3s;`}
+          >{f}</button>
+        ))}
+      </div>
+
+      <!-- Grid projets -->
+      <div class="g-3" id="projects-grid">
+        {projets.map((p, i) => (
+          <a
+            href={p.href}
+            class={`glass-card animate-up delay-${i%3+1}`}
+            data-tags={p.tags.join(',')}
+            style="display:block;text-decoration:none;color:inherit;overflow:hidden;"
+          >
+            <div style={`aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--navy-light);position:relative;`}>
+              {p.emoji}
+              <div style="position:absolute;top:1rem;left:1rem;display:flex;gap:.5rem;flex-wrap:wrap;">
+                {p.tags.map(t => <span class="tag" style="font-size:.65rem;">{t}</span>)}
+              </div>
+              <div style="position:absolute;bottom:1rem;right:1rem;">
+                <span style="font-size:1.1rem;font-weight:800;color:var(--cyan);">{p.result}</span>
+              </div>
+            </div>
+            <div style="padding:1.5rem;">
+              <div style="font-size:.75rem;color:var(--text-dim);margin-bottom:.25rem;">{p.secteur}</div>
+              <h3 style="font-weight:700;margin-bottom:.5rem;">{p.client}</h3>
+              <p class="text-muted" style="font-size:.875rem;line-height:1.65;margin-bottom:1rem;">{p.desc}</p>
+              <span style="font-size:.85rem;font-weight:600;color:var(--cyan);">Voir le cas client →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;margin-bottom:1rem;">
+        Votre succès sera le prochain à afficher
+      </h2>
+      <p class="text-muted" style="max-width:480px;margin:0 auto 2rem;">
+        Audit digital gratuit · Stratégie sur-mesure · Résultats mesurables
+      </p>
+      <a href="/devis" class="btn-primary" style="font-size:1rem;padding:1rem 2.25rem;">Lancer votre projet →</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  // Filter functionality
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#projects-grid [data-tags]') as NodeListOf<HTMLElement>;
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = (btn as HTMLElement).dataset.filter || 'all';
+
+      btns.forEach(b => {
+        const el = b as HTMLElement;
+        el.style.borderColor = 'rgba(255,255,255,.15)';
+        el.style.background  = 'transparent';
+        el.style.color       = 'var(--text-muted)';
+      });
+      const active = btn as HTMLElement;
+      active.style.borderColor = 'var(--cyan)';
+      active.style.background  = 'var(--cyan-dim)';
+      active.style.color       = 'var(--cyan)';
+
+      cards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        card.style.display = (filter === 'all' || tags.includes(filter)) ? 'block' : 'none';
+      });
+    });
+  });
+</script>

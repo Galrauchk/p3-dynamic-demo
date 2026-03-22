@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Création Web & Design"
+  description="Agence web à Montpellier — Sites vitrine, e-commerce, landing pages haute conversion. Design moderne, performances techniques, mobile-first. Spark Digital Agency."
+  page="creation-web"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <a href="/services">Services</a><span class="breadcrumb-sep">/</span>
+        <span>Création Web</span>
+      </div>
+      <span class="section-label">Création web</span>
+      <h1>Des sites qui <span class="gradient-text">convertissent</span></h1>
+      <p>Design premium, performance technique irréprochable, UX centrée conversion. Vos visiteurs deviennent des clients — c'est mesurable, garanti.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/devis"        class="btn-primary">Devis en 48h</a>
+        <a href="/realisations" class="btn-secondary">Voir nos réalisations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="stats-grid animate-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="280" data-suffix="%">0%</span>
+          <p class="stat-label">de leads en plus en moyenne</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="98" data-suffix="/100">0/100</span>
+          <p class="stat-label">score Lighthouse moyen</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="30" data-suffix=" jours">0 jours</span>
+          <p class="stat-label">délai de livraison moyen</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="85" data-suffix="+">0+</span>
+          <p class="stat-label">sites livrés en 8 ans</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types de sites -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label section-label-dark">Nos réalisations web</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.5rem);font-weight:800;">Tous types de projets web</h2>
+      </div>
+      <div class="g-3">
+        {[
+          { icon:'🖥️', title:'Site Vitrine', desc:'Votre vitrine digitale premium. Design sur-mesure, pages de services, blog, formulaires. À partir de 2 500€.', prix:'Dès 2 500€' },
+          { icon:'🛒', title:'E-commerce',   desc:'Boutique en ligne WooCommerce ou Shopify. Expérience d\'achat optimisée, paiements sécurisés, gestion des stocks.', prix:'Dès 5 000€' },
+          { icon:'🎯', title:'Landing Page', desc:'Page unique haute conversion pour vos campagnes Ads. CRO avancé, A/B testing, formulaires optimisés.', prix:'Dès 990€' },
+          { icon:'📱', title:'Application Web', desc:'SaaS, plateformes, outils métier. Développement React/Next.js, API REST, architecture scalable.', prix:'Sur devis' },
+          { icon:'📝', title:'Site Corporate', desc:'Grand groupe ou PME ambitieuse. Multi-pages, multi-langues, intégration CRM et outils marketing.', prix:'Dès 8 000€' },
+          { icon:'⚡', title:'Refonte Web',    desc:'Votre site actuel est lent ou vieillissant ? On le modernise et on optimise ses conversions. Résultats garantis.', prix:'Dès 3 500€' },
+        ].map((item, i) => (
+          <div class={`light-card animate-up delay-${i%3+1}`} style="padding:2rem;">
+            <div class="icon-box" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);">{item.icon}</div>
+            <h3 style="font-weight:700;color:var(--text-dark);margin-bottom:.5rem;">{item.title}</h3>
+            <p class="text-muted" style="font-size:.875rem;line-height:1.65;margin-bottom:1rem;">{item.desc}</p>
+            <span class="tag tag-blue">{item.prix}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stack technique -->
+  <section class="section section-dark diagonal-both">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label">Stack technique</span>
+        <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;">Technologies maîtrisées</h2>
+      </div>
+      <div class="tech-pills" style="justify-content:center;max-width:800px;margin:0 auto;">
+        {['Astro', 'Next.js', 'React', 'TypeScript', 'WordPress', 'WooCommerce',
+          'Shopify', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'Vercel', 'Netlify',
+          'Figma', 'Webflow', 'Strapi CMS'].map(t => (
+          <span class="tech-pill">{t}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;margin-bottom:1rem;">
+        Votre projet web démarre ici
+      </h2>
+      <p class="text-muted" style="max-width:480px;margin:0 auto 2rem;">
+        Devis gratuit en 48h · Brief technique gratuit · Accompagnement de bout en bout
+      </p>
+      <a href="/devis" class="btn-primary" style="font-size:1rem;padding:1rem 2.25rem;">Demander mon devis →</a>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Google Ads & SEA"
+  description="Agence Google Ads à Montpellier — Campagnes Search, Display, Shopping optimisées. ROI garanti, experts certifiés Google. Spark Digital Agency."
+  page="google-ads"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <a href="/services">Services</a><span class="breadcrumb-sep">/</span>
+        <span>Google Ads</span>
+      </div>
+      <span class="section-label">Publicité en ligne</span>
+      <h1>Google Ads qui <span class="gradient-text">convertissent</span></h1>
+      <p>Experts Google Ads certifiés, nous créons des campagnes ultra-performantes qui génèrent des leads qualifiés et maximisent votre retour sur investissement publicitaire.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/devis"   class="btn-primary">Audit de campagne gratuit</a>
+        <a href="/contact" class="btn-secondary">Parler à un expert</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="stats-grid animate-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="6" data-suffix=".8x" data-decimal="false">0x</span>
+          <p class="stat-label">ROAS moyen constaté</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="40" data-prefix="-" data-suffix="%">0%</span>
+          <p class="stat-label">de coût par acquisition</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="95" data-suffix="%">0%</span>
+          <p class="stat-label">de clients satisfaits</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="12" data-suffix="M€">0M€</span>
+          <p class="stat-label">dépenses publicitaires gérées</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types de campagnes -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label section-label-dark">Nos expertises</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.5rem);font-weight:800;letter-spacing:-.02em;">
+          Tous les formats Google Ads maîtrisés
+        </h2>
+      </div>
+      <div class="g-3">
+        {[
+          { icon:'🔍', title:'Search Ads', desc:'Annonces textuelles au moment exact où vos clients cherchent. Quality Score optimisé, enchères intelligentes.' },
+          { icon:'🖼️', title:'Display & Remarketing', desc:'Touchez vos prospects sur des millions de sites. Retargeting précis, audiences personnalisées, visuels percutants.' },
+          { icon:'🛍️', title:'Shopping Ads', desc:'Campagnes Performance Max et Shopping Standard pour les e-commerçants. ROAS optimisé, flux produits maîtrisé.' },
+          { icon:'▶️', title:'YouTube Ads', desc:'Vidéos TrueView, bumper ads, discovery. Visibilité massive au coût le plus bas possible.' },
+          { icon:'📍', title:'Local Ads', desc:'Campagnes locales pour générer des visites en magasin et des appels téléphoniques sur Montpellier et alentours.' },
+          { icon:'🤖', title:'Performance Max', desc:'Campagnes IA sur tous les canaux Google. Nous les maîtrisons et les contrôlons pour éviter les dépenses inutiles.' },
+        ].map((item, i) => (
+          <div class={`light-card animate-up delay-${i+1}`} style="padding:2rem;">
+            <div class="icon-box" style="background:rgba(0,102,255,.08);border-color:rgba(0,102,255,.2);">{item.icon}</div>
+            <h3 style="font-weight:700;color:var(--text-dark);margin-bottom:.5rem;">{item.title}</h3>
+            <p class="text-muted" style="font-size:.875rem;line-height:1.65;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Ads -->
+  <section class="section section-dark diagonal-both">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label">Notre méthode</span>
+        <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;">Comment on optimise vos campagnes</h2>
+      </div>
+      <div class="process-horizontal">
+        {[
+          { n:'01', t:'Audit Ads', d:'Analyse de vos campagnes actuelles, gaspillages identifiés, opportunités repérées.' },
+          { n:'02', t:'Structure & Setup', d:'Restructuration, groupes d\'annonces, extensions, tracking de conversions précis.' },
+          { n:'03', t:'Lancement & Test', d:'A/B test des annonces, des audiences, des landing pages. On teste vite, on scale ce qui marche.' },
+          { n:'04', t:'Scaling', d:'Augmentation maîtrisée du budget sur les campagnes les plus performantes. ROI maintenu ou amélioré.' },
+        ].map((item, i) => (
+          <div class={`process-step-h animate-up delay-${i+1}`}>
+            <div class="process-step-num">{item.n}</div>
+            <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">{item.t}</h3>
+            <p class="text-muted" style="font-size:.875rem;line-height:1.65;">{item.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;margin-bottom:1rem;">
+        Stoppez le gaspillage publicitaire
+      </h2>
+      <p class="text-muted" style="max-width:480px;margin:0 auto 2rem;">
+        Audit gratuit de vos campagnes Google Ads actuelles · Résultats en 48h
+      </p>
+      <a href="/devis" class="btn-primary" style="font-size:1rem;padding:1rem 2.25rem;">Audit Google Ads gratuit →</a>
+    </div>
+  </section>
+
+</BaseLayout>

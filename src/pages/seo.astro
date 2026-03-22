@@ -1,0 +1,148 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="SEO & Référencement naturel"
+  description="Agence SEO à Montpellier — Positionnez votre site en première page Google durablement. Audit SEO, stratégie de contenu, netlinking. Spark Digital Agency."
+  page="seo"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <a href="/services">Services</a><span class="breadcrumb-sep">/</span>
+        <span>SEO</span>
+      </div>
+      <span class="section-label">Référencement naturel</span>
+      <h1>SEO qui <span class="gradient-text">performe</span></h1>
+      <p>Première page Google en 6 mois ou remboursé. Notre méthode SEO Data-First propulse votre visibilité organique et génère un flux constant de prospects qualifiés.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/devis" class="btn-primary">Audit SEO gratuit</a>
+        <a href="#offres" class="btn-secondary">Voir nos offres</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Résultats -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="stats-grid animate-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="340" data-suffix="%">0%</span>
+          <p class="stat-label">trafic organique en moyenne</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="87" data-suffix="%">0%</span>
+          <p class="stat-label">clients top 3 Google</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="6" data-suffix=" mois">0 mois</span>
+          <p class="stat-label">pour des résultats visibles</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="200" data-suffix="+">0+</span>
+          <p class="stat-label">sites optimisés</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offres SEO -->
+  <section class="section section-white diagonal-up" id="offres">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label section-label-dark">Nos offres SEO</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.5rem);font-weight:800;letter-spacing:-.02em;">
+          Choisissez votre plan de croissance
+        </h2>
+      </div>
+      <div class="g-3">
+        <div class="light-card animate-up pricing-card">
+          <span class="tag tag-blue">STARTER</span>
+          <div class="pricing-price" style="-webkit-text-fill-color:inherit;background:none;color:var(--text-dark);">990€</div>
+          <p class="pricing-period">/mois · sans engagement</p>
+          <ul class="check-list" style="text-align:left;margin-bottom:2rem;">
+            <li>Audit SEO technique</li>
+            <li>10 pages optimisées/mois</li>
+            <li>5 articles SEO</li>
+            <li>Rapport mensuel</li>
+            <li>Support email</li>
+          </ul>
+          <a href="/devis" class="btn-dark" style="width:100%;justify-content:center;">Démarrer</a>
+        </div>
+        <div class="light-card animate-up delay-1 pricing-card featured" style="border:2px solid var(--blue);transform:scale(1.03);">
+          <span class="tag" style="background:var(--gradient);background-size:200%;color:white;border:none;">PERFORMANCE</span>
+          <div class="pricing-price">1 990€</div>
+          <p class="pricing-period" style="color:var(--text-muted);">/mois · 6 mois min</p>
+          <ul class="check-list" style="text-align:left;margin-bottom:2rem;">
+            <li>Audit complet + stratégie</li>
+            <li>Pages illimitées optimisées</li>
+            <li>15 articles SEO premium</li>
+            <li>Netlinking 10 liens/mois</li>
+            <li>Dashboard temps réel</li>
+            <li>Réunion bimensuelle</li>
+          </ul>
+          <a href="/devis" class="btn-primary" style="width:100%;justify-content:center;">Démarrer →</a>
+        </div>
+        <div class="light-card animate-up delay-2 pricing-card">
+          <span class="tag tag-blue">ENTREPRISE</span>
+          <div class="pricing-price" style="-webkit-text-fill-color:inherit;background:none;color:var(--text-dark);">Sur devis</div>
+          <p class="pricing-period">/mois · sur-mesure</p>
+          <ul class="check-list" style="text-align:left;margin-bottom:2rem;">
+            <li>Stratégie multi-sites</li>
+            <li>Content hub complet</li>
+            <li>Netlinking premium</li>
+            <li>SEO International</li>
+            <li>Account manager dédié</li>
+            <li>SLA garanti</li>
+          </ul>
+          <a href="/contact" class="btn-dark" style="width:100%;justify-content:center;">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ce qu'on fait -->
+  <section class="section section-dark diagonal-both">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label">Nos piliers SEO</span>
+        <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;">La méthode Spark SEO</h2>
+      </div>
+      <div class="g-3">
+        {[
+          { icon:'⚙️', title:'SEO Technique', desc:'Crawl, indexation, Core Web Vitals, structure, données structurées. Bases solides pour un référencement durable.' },
+          { icon:'✍️', title:'SEO Contenu', desc:'Recherche de mots-clés, cocon sémantique, articles optimisés, FAQ, People Also Ask. Votre site répond à toutes les intentions de recherche.' },
+          { icon:'🔗', title:'Netlinking', desc:'Liens naturels et éditoriaux depuis des sites d\'autorité. Digital PR, partenariats, guest posting. Votre autorité de domaine monte.' },
+          { icon:'📊', title:'Analyse & Data', desc:'Google Search Console, Analytics 4, Semrush, Ahrefs. Nous pilotons votre SEO avec des données précises.' },
+          { icon:'🏆', title:'SEO Local', desc:'Google Business Profile, citations locales, avis. Dominez les recherches "near me" sur Montpellier, Toulouse et Bordeaux.' },
+          { icon:'🌍', title:'SEO International', desc:'Hreflang, structure multilingue, ciblage géographique. Partez à la conquête des marchés européens.' },
+        ].map((item, i) => (
+          <div class={`glass-card animate-up delay-${i+1}`} style="padding:1.75rem;">
+            <div class="icon-box">{item.icon}</div>
+            <h3 style="font-weight:700;margin-bottom:.5rem;">{item.title}</h3>
+            <p class="text-muted" style="font-size:.875rem;line-height:1.65;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;margin-bottom:1rem;">
+        Prêt à dominer Google ?
+      </h2>
+      <p class="text-muted" style="max-width:480px;margin:0 auto 2rem;">
+        Audit SEO gratuit · Analyse de vos concurrents · Plan d'action chiffré
+      </p>
+      <a href="/devis" class="btn-primary" style="font-size:1rem;padding:1rem 2.25rem;">Obtenir mon audit gratuit →</a>
+    </div>
+  </section>
+
+</BaseLayout>

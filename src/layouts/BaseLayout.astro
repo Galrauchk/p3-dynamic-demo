@@ -1,0 +1,166 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  page?: string;
+}
+
+const {
+  title,
+  description = "Spark Digital Agency — Agence marketing digital à Montpellier. SEO, Google Ads, Social Media, Création web & Automation.",
+  page = ""
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" />
+  <title>{title} | Spark Digital Agency</title>
+  <!-- Open Graph -->
+  <meta property="og:title"       content={`${title} | Spark Digital Agency`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://p3-dynamic-demo.netlify.app" />
+</head>
+<body>
+  <Header page={page} />
+
+  <main>
+    <slot />
+  </main>
+
+  <Footer />
+
+  <!-- =============================================
+       GLOBAL JAVASCRIPT
+       ============================================= -->
+  <script>
+    // ── Header scroll ────────────────────────────
+    const header = document.querySelector('.site-header');
+    const updateHeader = () =>
+      header?.classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
+    // ── Mobile menu ──────────────────────────────
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.querySelector('.nav-mobile');
+    toggle?.addEventListener('click', () => {
+      mobileNav?.classList.toggle('open');
+    });
+
+    // ── Scroll animations (IntersectionObserver) ─
+    const scrollObs = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          scrollObs.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.animate-up').forEach(el => scrollObs.observe(el));
+
+    // ── Count-up animation ───────────────────────
+    const countObs = new IntersectionObserver(
+      (entries) => entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        const target  = parseFloat(el.dataset.target  || '0');
+        const suffix  = el.dataset.suffix  || '';
+        const prefix  = el.dataset.prefix  || '';
+        const decimal = el.dataset.decimal === 'true';
+        const duration = 2200;
+        const start    = Date.now();
+
+        const tick = () => {
+          const elapsed  = Date.now() - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased    = 1 - Math.pow(1 - progress, 3);
+          const value    = eased * target;
+          el.textContent = prefix + (decimal ? value.toFixed(1) : Math.round(value).toString()) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        countObs.unobserve(el);
+      }),
+      { threshold: 0.5 }
+    );
+    document.querySelectorAll('[data-target]').forEach(el => countObs.observe(el));
+
+    // ── FAQ accordion ────────────────────────────
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling as HTMLElement | null;
+        const icon   = btn.querySelector('.faq-icon');
+        const isOpen = answer?.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => { i.textContent = '+'; });
+
+        // Open clicked if was closed
+        if (!isOpen && answer) {
+          answer.classList.add('open');
+          if (icon) icon.textContent = '−';
+        }
+      });
+    });
+
+    // ── Typewriter cycling ───────────────────────
+    const tw = document.querySelector('.typewriter-text') as HTMLElement | null;
+    if (tw) {
+      const words = tw.dataset.words ? JSON.parse(tw.dataset.words) : [];
+      if (words.length > 0) {
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        const type = () => {
+          const current = words[wordIndex];
+          if (isDeleting) {
+            charIndex--;
+            tw.textContent = current.slice(0, charIndex);
+          } else {
+            charIndex++;
+            tw.textContent = current.slice(0, charIndex);
+          }
+
+          let speed = isDeleting ? 60 : 100;
+
+          if (!isDeleting && charIndex === current.length) {
+            speed = 1800; // pause at end
+            isDeleting = true;
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            speed = 300;
+          }
+
+          setTimeout(type, speed);
+        };
+        type();
+      }
+    }
+
+    // ── Active nav link ──────────────────────────
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const href = (link as HTMLAnchorElement).getAttribute('href') || '';
+      if (href === path || (href !== '/' && path.startsWith(href))) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

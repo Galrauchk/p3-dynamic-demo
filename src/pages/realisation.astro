@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Cas client — Novalo SaaS · +420% de trafic"
+  description="Découvrez comment Spark Digital Agency a multiplié par 4 le trafic de Novalo SaaS grâce au SEO et aux Google Ads en 8 mois."
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <a href="/realisations">Réalisations</a><span class="breadcrumb-sep">/</span>
+        <span>Novalo SaaS</span>
+      </div>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-bottom:1.25rem;flex-wrap:wrap;">
+        <span class="tag">SEO</span>
+        <span class="tag">Google Ads</span>
+        <span class="tag tag-blue">SaaS B2B</span>
+      </div>
+      <h1>Novalo SaaS — <span class="gradient-text">+420% de trafic</span></h1>
+      <p>De 3 500 à 18 000 visiteurs organiques/mois en 8 mois. Un cas d'école en matière de stratégie SEO + Google Ads pour une startup SaaS.</p>
+    </div>
+  </section>
+
+  <!-- KPIs header -->
+  <section class="section section-dark" style="padding:2.5rem 0;">
+    <div class="container">
+      <div class="stats-grid animate-up">
+        <div class="stat-card">
+          <span class="stat-number" data-target="420" data-suffix="%">0%</span>
+          <p class="stat-label">trafic organique</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="6" data-suffix=".8x">0x</span>
+          <p class="stat-label">ROAS Google Ads</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="8" data-suffix=" mois">0 mois</span>
+          <p class="stat-label">pour atteindre les objectifs</p>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number" data-target="320" data-suffix="%">0%</span>
+          <p class="stat-label">leads qualifiés en plus</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contexte / Challenge / Solution -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+      <div class="split animate-up">
+        <div>
+          <span class="section-label section-label-dark">Le contexte</span>
+          <h2 style="font-size:1.75rem;font-weight:800;margin-bottom:1rem;">Un SaaS invisible sur Google</h2>
+          <p style="color:var(--text-gray);line-height:1.75;margin-bottom:1.25rem;">
+            Novalo, plateforme SaaS de gestion RH pour les PME, lançait sa version 2.0 début 2024. Malgré un produit excellent, leur visibilité en ligne était quasi nulle : 3 500 visiteurs/mois, aucun mot-clé en top 10, des campagnes Ads qui brûlaient 8 000€/mois sans retour mesurable.
+          </p>
+          <p style="color:var(--text-gray);line-height:1.75;">
+            Objectif : générer un flux constant de trials qualifiés à un coût maîtrisé. On s'est donné 8 mois pour transformer la donne.
+          </p>
+        </div>
+        <div>
+          <div class="light-card" style="padding:2rem;border-left:3px solid var(--blue);">
+            <h3 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:1rem;">🎯 Les objectifs fixés</h3>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:.75rem;">
+              {[
+                '+200% trafic organique en 8 mois',
+                'ROAS Google Ads > 5x',
+                '< 80€ coût par trial',
+                'Top 3 sur 20 mots-clés cibles',
+              ].map(o => (
+                <li style="display:flex;gap:.75rem;font-size:.9rem;color:var(--text-gray);">
+                  <span style="color:var(--blue);font-weight:700;">✓</span>{o}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Actions -->
+  <section class="section section-dark diagonal-both">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label">Notre action</span>
+        <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;">Ce que nous avons mis en place</h2>
+      </div>
+      <div class="g-3">
+        {[
+          { icon:'⚙️', t:'Audit technique SEO', d:'Refonte complète de l\'architecture, correction de 140 erreurs critiques, optimisation des Core Web Vitals (score 98/100).' },
+          { icon:'✍️', t:'Stratégie de contenu', d:'Mapping sémantique de 280 mots-clés. Production de 60 articles SEO expert, 15 guides complets, 40 pages de landing.' },
+          { icon:'🔗', t:'Netlinking premium', d:'12 liens depuis des médias tech (JDN, BFM Business, Frenchweb). Autorité de domaine passée de 18 à 42.' },
+          { icon:'📢', t:'Restructuration Ads', d:'Suppression de 80% des mots-clés non convertissants. Smart Bidding Target CPA. 3 A/B tests simultanés.' },
+          { icon:'🎯', t:'Landing pages CRO',  d:'4 landing pages dédiées aux segments cibles. Heat maps, session recordings, formulaires optimisés.' },
+          { icon:'🤖', t:'Automation email',    d:'Séquence onboarding en 7 emails. Nurturing leads froids. Scoring automatique. +65% de trials convertis en payants.' },
+        ].map((item, i) => (
+          <div class={`glass-card animate-up delay-${i%3+1}`} style="padding:1.75rem;">
+            <div class="icon-box">{item.icon}</div>
+            <h3 style="font-weight:700;margin-bottom:.5rem;">{item.t}</h3>
+            <p class="text-muted" style="font-size:.875rem;line-height:1.65;">{item.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignage -->
+  <section class="section section-white diagonal-up">
+    <div class="container" style="max-width:700px;">
+      <div class="light-card animate-up" style="padding:3rem;text-align:center;border:2px solid rgba(0,102,255,.15);">
+        <div style="font-size:4rem;margin-bottom:1.5rem;opacity:.3;font-family:Georgia,serif;">"</div>
+        <p style="font-size:1.125rem;line-height:1.75;color:var(--text-gray);margin-bottom:2rem;font-style:italic;">
+          Spark Digital a complètement transformé notre acquisition. En 8 mois, on est passés de l'invisibilité à leader sur nos mots-clés cibles. Le ROI est clairement là, mesuré à l'euro près. Une équipe exceptionnelle.
+        </p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:1rem;">
+          <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#00e5ff,#0066ff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:white;">MB</div>
+          <div style="text-align:left;">
+            <p style="font-weight:700;color:var(--text-dark);">Marc Beaumont</p>
+            <p style="font-size:.875rem;color:var(--text-gray);">CEO & Co-fondateur — Novalo SAS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation cas clients -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:1rem;">
+        Votre entreprise peut obtenir les mêmes résultats
+      </h2>
+      <p class="text-muted" style="max-width:480px;margin:0 auto 2rem;">
+        Chaque projet est unique. Nos experts construisent votre stratégie sur-mesure.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/devis"        class="btn-primary">Audit gratuit →</a>
+        <a href="/realisations" class="btn-secondary">Autres réalisations</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

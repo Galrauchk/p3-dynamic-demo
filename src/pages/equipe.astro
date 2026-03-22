@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const team = [
+  { initials:'JR', name:'Julien Roux',       role:'CEO & Co-fondateur',   expertise:'Stratégie digitale, Direction', linkedin:'#', twitter:'#' },
+  { initials:'CF', name:'Camille Faure',      role:'COO & Co-fondatrice',  expertise:'Operations, Client Success',   linkedin:'#', twitter:'#' },
+  { initials:'AM', name:'Alexandre Martin',   role:'Head of SEO',          expertise:'SEO technique, Contenu, NLP',  linkedin:'#', twitter:'#' },
+  { initials:'LB', name:'Laura Bonnet',       role:'Head of Paid Media',   expertise:'Google Ads, Meta Ads, YouTube',linkedin:'#', twitter:'#' },
+  { initials:'TD', name:'Thomas Dupuis',      role:'Lead Developer',       expertise:'Web, Astro, React, Performance',linkedin:'#', twitter:'#' },
+  { initials:'EN', name:'Emma Nguyen',        role:'Social Media Manager', expertise:'Social Media, Content, Ads',   linkedin:'#', twitter:'#' },
+  { initials:'PM', name:'Pierre Marchand',    role:'Data & Analytics',     expertise:'GA4, Data Studio, Attribution',linkedin:'#', twitter:'#' },
+  { initials:'SR', name:'Sarah Rousseau',     role:'Automation Specialist',expertise:'HubSpot, CRM, Workflows',      linkedin:'#', twitter:'#' },
+];
+
+const perks = [
+  { icon:'🏡', title:'Remote friendly',      desc:'2 jours de télétravail par semaine, flexibilité sur les horaires.' },
+  { icon:'📚', title:'Formation continue',   desc:'Budget formation annuel 1 500€ par collaborateur, conférences, certifications.' },
+  { icon:'🎯', title:'Challenges & Bonus',   desc:'Primes sur objectifs, intéressement aux résultats clients.' },
+  { icon:'🎉', title:'Team building',        desc:'Séminaire annuel, afterworks mensuels, culture bienveillante.' },
+];
+---
+
+<BaseLayout
+  title="Notre Équipe"
+  description="Découvrez l'équipe de Spark Digital Agency — 22 experts en SEO, Google Ads, Social Media, création web et marketing automation à Montpellier, Toulouse et Bordeaux."
+  page="equipe"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <a href="/about">À propos</a><span class="breadcrumb-sep">/</span>
+        <span>Équipe</span>
+      </div>
+      <span class="section-label">Les visages derrière les résultats</span>
+      <h1>Notre <span class="gradient-text">équipe</span></h1>
+      <p>22 experts passionnés répartis sur Montpellier, Toulouse et Bordeaux. Chacun spécialisé, tous alignés sur vos objectifs.</p>
+    </div>
+  </section>
+
+  <!-- Team grid -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="g-4">
+        {team.map((member, i) => (
+          <div class={`glass-card animate-up delay-${i%4+1}`} style="padding:2rem;text-align:center;">
+            <div class="team-avatar" style="margin:0 auto;">{member.initials}</div>
+            <h3 style="font-weight:700;font-size:1rem;margin-bottom:.25rem;">{member.name}</h3>
+            <p style="font-size:.8rem;color:var(--cyan);font-weight:600;margin-bottom:.375rem;">{member.role}</p>
+            <p class="text-muted" style="font-size:.78rem;margin-bottom:1rem;">{member.expertise}</p>
+            <div style="display:flex;gap:.5rem;justify-content:center;">
+              <a href={member.linkedin} class="tech-pill" style="padding:.35rem .75rem;font-size:.7rem;">in</a>
+              <a href={member.twitter}  class="tech-pill" style="padding:.35rem .75rem;font-size:.7rem;">𝕏</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Perks -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <span class="section-label section-label-dark">On recrute</span>
+        <h2 style="font-size:clamp(2rem,4vw,2.5rem);font-weight:800;">Rejoindre Spark Digital</h2>
+        <p class="text-muted" style="max-width:540px;margin:1rem auto 0;">
+          On grandit et on cherche des talents passionnés par le marketing digital et la performance. Si tu veux faire partie d'une aventure ambitieuse, c'est ici.
+        </p>
+      </div>
+      <div class="g-4">
+        {perks.map((p, i) => (
+          <div class={`light-card animate-up delay-${i+1}`} style="padding:2rem;text-align:center;">
+            <div style="font-size:2.5rem;margin-bottom:.875rem;">{p.icon}</div>
+            <h3 style="font-weight:700;color:var(--text-dark);margin-bottom:.5rem;font-size:.95rem;">{p.title}</h3>
+            <p class="text-muted" style="font-size:.875rem;line-height:1.65;">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top:3rem;">
+        <a href="/contact" class="btn-dark">Voir les offres d'emploi →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h2 style="font-size:clamp(2rem,4vw,2.75rem);font-weight:800;margin-bottom:1rem;">
+        On a hâte de travailler ensemble
+      </h2>
+      <p class="text-muted" style="max-width:480px;margin:0 auto 2rem;">
+        Que ce soit pour un projet ou pour rejoindre l'équipe, on est à l'écoute.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="/devis"   class="btn-primary">Lancer un projet →</a>
+        <a href="/contact" class="btn-secondary">Postuler</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

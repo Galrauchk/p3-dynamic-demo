@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Demande de Devis — Audit Digital Gratuit"
+  description="Obtenez votre audit digital gratuit en 24h avec Spark Digital Agency. SEO, Google Ads, Social Media, Création Web à Montpellier. Sans engagement."
+  page="devis"
+>
+
+  <section class="page-hero particles-section">
+    <div class="particles-canvas" aria-hidden="true"></div>
+    <div class="page-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a><span class="breadcrumb-sep">/</span>
+        <span>Devis gratuit</span>
+      </div>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Audit offert · Réponse sous 24h · Sans engagement
+      </div>
+      <h1>Votre audit <span class="gradient-text">100% gratuit</span></h1>
+      <p>Dites-nous où vous en êtes. Nos experts analysent votre situation et vous envoient un plan d'action personnalisé avec des opportunités de croissance chiffrées.</p>
+    </div>
+  </section>
+
+  <!-- Formulaire devis -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="split animate-up">
+
+        <div class="glass-card" style="padding:2.5rem;">
+          <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:.5rem;">Décrivez votre projet</h2>
+          <p class="text-muted" style="font-size:.85rem;margin-bottom:2rem;">Étape 1/1 · 3 minutes suffisent</p>
+
+          <form action="#" method="post">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-row">
+                <label class="form-label">Prénom *</label>
+                <input type="text" class="form-input" placeholder="Julien" required />
+              </div>
+              <div class="form-row">
+                <label class="form-label">Nom *</label>
+                <input type="text" class="form-input" placeholder="Dupont" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Email professionnel *</label>
+              <input type="email" class="form-input" placeholder="vous@entreprise.fr" required />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Téléphone *</label>
+              <input type="tel" class="form-input" placeholder="06 12 34 56 78" required />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Site web actuel</label>
+              <input type="url" class="form-input" placeholder="https://votre-site.fr" />
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Secteur d'activité *</label>
+              <select class="form-input" required>
+                <option value="">Choisissez votre secteur...</option>
+                <option>E-commerce / Retail</option>
+                <option>SaaS / Tech</option>
+                <option>BTP / Construction</option>
+                <option>Santé / Médical</option>
+                <option>Restauration / Hôtellerie</option>
+                <option>Formation / Coaching</option>
+                <option>Immobilier</option>
+                <option>Autre</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Services souhaités *</label>
+              <div style="display:flex;flex-direction:column;gap:.625rem;margin-top:.5rem;">
+                {['SEO & Référencement', 'Google Ads', 'Social Media', 'Création Web', 'Marketing Automation', 'Stratégie globale'].map(s => (
+                  <label style="display:flex;align-items:center;gap:.75rem;cursor:pointer;font-size:.9rem;color:var(--text-muted);">
+                    <input type="checkbox" name="services" value={s} style="accent-color:var(--cyan);width:16px;height:16px;" />
+                    {s}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div class="form-row" style="margin-top:1.25rem;">
+              <label class="form-label">Budget mensuel *</label>
+              <select class="form-input" required>
+                <option value="">Votre budget mensuel...</option>
+                <option>Moins de 1 000€/mois</option>
+                <option>1 000€ – 3 000€/mois</option>
+                <option>3 000€ – 5 000€/mois</option>
+                <option>5 000€ – 10 000€/mois</option>
+                <option>Plus de 10 000€/mois</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label class="form-label">Vos principaux objectifs</label>
+              <textarea class="form-input" placeholder="Augmenter le trafic, générer des leads, améliorer le ROAS..." style="min-height:100px;"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;padding:1.1rem;font-size:1rem;margin-top:.5rem;">
+              🚀 Envoyer ma demande d'audit
+            </button>
+          </form>
+        </div>
+
+        <!-- Ce qu'on vous envoie -->
+        <div>
+          <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:2rem;">Ce que vous recevrez</h2>
+
+          {[
+            { num:'01', title:'Analyse SEO de votre site', desc:'Score technique, mots-clés positionnés, opportunités identifiées. Comparé à vos 3 principaux concurrents.' },
+            { num:'02', title:'Audit de vos performances Ads', desc:'Si vous avez des campagnes actives, analyse des gaspillages et des opportunités d\'optimisation.' },
+            { num:'03', title:'Analyse de votre présence sociale', desc:'Engagement, croissance, benchmark sectoriel. Ce qui fonctionne et ce qui peut être amélioré.' },
+            { num:'04', title:'Plan d\'action chiffré', desc:'Top 5 actions prioritaires avec ROI estimé, investissement requis et délai de mise en place.' },
+          ].map((item, i) => (
+            <div class={`glass-card animate-up delay-${i+1}`} style="padding:1.5rem;margin-bottom:1rem;display:flex;align-items:flex-start;gap:1.25rem;">
+              <div style="width:40px;height:40px;border-radius:10px;background:var(--gradient);background-size:200%;animation:gradient-shift 3s ease infinite;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0;">{item.num}</div>
+              <div>
+                <h3 style="font-weight:700;margin-bottom:.35rem;font-size:.95rem;">{item.title}</h3>
+                <p class="text-muted" style="font-size:.85rem;line-height:1.65;">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+
+          <div style="padding:1.5rem;background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.2);border-radius:16px;margin-top:1.5rem;">
+            <div style="display:flex;align-items:center;gap:.875rem;">
+              <span style="font-size:2rem;">⏱️</span>
+              <div>
+                <div style="font-weight:700;">Livré en moins de 24h</div>
+                <div class="text-muted" style="font-size:.85rem;">Par email, avec présentation visio optionnelle</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages rapides -->
+  <section class="section section-white diagonal-up">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <h2 style="font-size:clamp(1.75rem,4vw,2.25rem);font-weight:800;">Ils ont démarré comme vous</h2>
+      </div>
+      <div class="testimonials-wrap">
+        {[
+          { init:'MB', name:'Marc B.', role:'CEO, Novalo', quote:'L\'audit gratuit m\'a ouvert les yeux sur 3 problèmes critiques que j\'ignorais. On a signé dans la foulée et les résultats ont dépassé nos attentes.' },
+          { init:'SL', name:'Sophie L.', role:'Directrice Marketing, Meridia', quote:'En 30 minutes de débrief audit, j\'avais plus d\'insights actionnables que lors de 6 mois avec notre prestataire précédent.' },
+          { init:'TM', name:'Thomas M.', role:'Fondateur, Axento', quote:'Le plan d\'action chiffré était bluffant de précision. On savait exactement à quoi on allait et pour quel ROI attendu.' },
+        ].map(t => (
+          <div class="light-card testimonial-card" style="padding:2rem;">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-quote">{t.quote}</p>
+            <div class="author-row">
+              <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00e5ff,#0066ff);background-size:200%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;">{t.init}</div>
+              <div>
+                <p style="font-weight:700;font-size:.9rem;color:var(--text-dark);">{t.name}</p>
+                <p style="font-size:.78rem;color:var(--text-gray);">{t.role}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
