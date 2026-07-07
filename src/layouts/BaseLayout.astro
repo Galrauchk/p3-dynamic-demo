@@ -16,6 +16,27 @@ const {
   page = "",
   schema,
 } = Astro.props;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Spark Digital Agency",
+  "description": "Agence marketing digital à Montpellier - SEO, Google Ads, Social Media, Création web.",
+  "url": "https://p3-dynamic-demo.netlify.app",
+  "telephone": "+33467223344",
+  "email": "hello@spark-digital.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Montpellier",
+    "postalCode": "34000",
+    "addressCountry": "FR"
+  },
+  "areaServed": ["Montpellier", "Toulouse", "Bordeaux"],
+  "priceRange": "€€"
+};
+
+const pageSchemas = Array.isArray(schema) ? schema : (schema ? [schema] : []);
+const allSchemas = [localBusinessSchema, ...pageSchemas];
 ---
 
 <!DOCTYPE html>
@@ -33,7 +54,9 @@ const {
   <meta property="og:description" content={description} />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://p3-dynamic-demo.netlify.app" />
-  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  {allSchemas.map((s) => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
 </head>
 <body>
   <Header page={page} />
