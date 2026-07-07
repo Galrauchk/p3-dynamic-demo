@@ -7,12 +7,14 @@ interface Props {
   title: string;
   description?: string;
   page?: string;
+  schema?: object;
 }
 
 const {
   title,
   description = "Spark Digital Agency — Agence marketing digital à Montpellier. SEO, Google Ads, Social Media, Création web & Automation.",
-  page = ""
+  page = "",
+  schema,
 } = Astro.props;
 ---
 
@@ -31,6 +33,7 @@ const {
   <meta property="og:description" content={description} />
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://p3-dynamic-demo.netlify.app" />
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
 <body>
   <Header page={page} />

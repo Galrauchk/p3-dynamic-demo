@@ -1,11 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Spark Digital Agency",
+  "url": "https://p3-dynamic-demo.netlify.app"
+};
 ---
 
 <BaseLayout
   title="Accueil"
   description="Spark Digital Agency — Agence marketing digital à Montpellier. SEO, Google Ads, Social Media, Création web & Automation. On crée, on mesure, on performe."
   page="home"
+  schema={schema}
 >
 
   <!-- ═══════════════════════════════════════════
