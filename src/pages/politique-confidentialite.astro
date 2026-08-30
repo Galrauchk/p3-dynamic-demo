@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LegalPage from '../components/LegalPage.astro';
+
+
+const kind = 'privacy' as const;
+---
+
+<BaseLayout title="Politique de confidentialité : [NOM DE L'ENTREPRISE]" description="Données personnelles, finalités, destinataires, conservation et droits RGPD.">
+  <LegalPage kind={kind} />
+</BaseLayout>
+

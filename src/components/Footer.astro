@@ -1,4 +1,6 @@
 ---
+import LegalLinks from './LegalLinks.astro';
+
 const year = new Date().getFullYear();
 ---
 
@@ -64,7 +66,7 @@ const year = new Date().getFullYear();
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-icon">✉️</span>
-          <span><a href="mailto:hello@spark-digital.fr" style="color:var(--text-muted);transition:color .2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--text-muted)'">hello@spark-digital.fr</a></span>
+          <span><a href="/contact" style="color:var(--text-muted);transition:color .2s;" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--text-muted)'">hello@spark-digital.fr</a></span>
         </div>
         <div class="footer-contact-item">
           <span class="footer-contact-icon">📍</span>
@@ -91,6 +93,7 @@ const year = new Date().getFullYear();
         <a href="/confidentialite">Confidentialité</a>
         <a href="/sitemap.xml">Sitemap</a>
       </div>
+      <LegalLinks includeMentions={false} />
     </div>
 
   </div>
