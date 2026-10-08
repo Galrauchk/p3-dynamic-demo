@@ -25,6 +25,6 @@
     "wrangler": "4.143.0"
   },
   "cloudflare": {
-    "domaine": "p3-dynamic-demo.netlify.app"
+    "domaine": "demo-dynamic.webtrafic.fr"
   }
 }
