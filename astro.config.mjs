@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://p3-dynamic-demo.netlify.app',
+  site: 'https://demo-dynamic.webtrafic.fr',
   integrations: [sitemap({
     filter: (page) =>
       !page.includes('/politique-confidentialite') &&
